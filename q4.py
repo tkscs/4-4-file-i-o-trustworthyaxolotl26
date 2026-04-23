@@ -4,10 +4,9 @@ import json
 # Check if the file "data.json" exists.
 if os.path.isfile("data.json"):
     # If it does, read "data.json" into the variable `data`
-
-    ####
-    #### YOUR CODE HERE 
-    ####
+    data = {}
+    with open ("data.json", "r") as dj:
+        json.load(dj)
 
 else:
     # If it doesn't, make an empty dictionary called data
@@ -22,7 +21,8 @@ data[name] = recommendation
 
 # Write the `data` variable to the file "data.json"
 
-####
-#### YOUR CODE HERE 
-####
+with open ("data.json", "w") as dj:
+    json.dump(data, dj)
+
+print (data)
 
